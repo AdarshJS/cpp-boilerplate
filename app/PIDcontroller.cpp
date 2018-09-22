@@ -5,10 +5,9 @@
  * @brief      Definitions for class PIDcontroller.
  */
 
-#include "PIDcontroller.hpp"
 #include<iostream>
-
 // Add extra headers as needed.
+#include "PIDcontroller.hpp"
 
 /**
  * @brief               Constructor for PIDcontroller class
@@ -41,7 +40,6 @@ PIDcontroller::PIDcontroller(double gainP, double gainI, double gainD,
  */
 
 double PIDcontroller::computeError() {
-
   // Calculate the difference between desired and current velocity.
 
   // Return currentError
@@ -56,7 +54,6 @@ double PIDcontroller::computeError() {
  */
 
 double PIDcontroller::computeVelocity() {
-
   // Add newVelocity as data member if it makes more sense.
   double newVelocity = 0;
 
@@ -71,7 +68,6 @@ double PIDcontroller::computeVelocity() {
    */
 
   return newVelocity;
-
 }
 
 /**
