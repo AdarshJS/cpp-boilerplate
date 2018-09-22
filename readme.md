@@ -6,7 +6,16 @@
 ## Authors
 
 Driver: Adarsh Jagan Sathyamoorthy
+
 Navigator: Niket Shah
+
+## TODO and NOTES
+1. Implement the computeError and computeVelocity function.
+
+Refer to the UML diagrams in the UML diagrams directory.
+Source files are inside ./app/
+Header files are inside ./include/
+Check test cases ./test/test.cpp
 
 ## Overview
 
