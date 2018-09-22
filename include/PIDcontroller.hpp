@@ -37,6 +37,8 @@ class PIDcontroller {
   double previousError = 0;
   // Time increment in sec
   float dTime = 0.05;
+  // Threshold below which PID has to take error
+  double errorThreshold = 0.001;
 
  public:
   // Constructor sets constants and current and desired velocities
