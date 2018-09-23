@@ -14,8 +14,8 @@
  */
 
 TEST(PIDtest1, checkErrorCalculation) {
-  PIDcontroller pid1(0.1, 0.1, 0.1, 2.0, 1.0);
-  PIDcontroller pid2(0.1, 0.1, 0.1, 1.0, 1.5);
+  PIDcontroller pid1(0.1, 0.0005, 0.00001, 2.0, 1.0);
+  PIDcontroller pid2(0.1, 0.0005, 0.00001, 1.0, 1.5);
 
   // Error = (desiredVel - currentVel)
   ASSERT_DOUBLE_EQ(pid1.computeError(), -1);
@@ -28,6 +28,6 @@ TEST(PIDtest1, checkErrorCalculation) {
  */
 
 TEST(PIDtest2, checkVelocityCalculation) {
-  PIDcontroller pid(0.1, 0.1, 0.1, 1.0, 2.0);
+  PIDcontroller pid(0.1, 0.0005, 0.00001, 1.0, 2.0);
   EXPECT_NEAR(pid.computeVelocity(), 2.0, 0.001);
 }
