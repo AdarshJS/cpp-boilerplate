@@ -56,19 +56,21 @@ double PIDcontroller::computeError() {
 
 double PIDcontroller::computeVelocity() {
   // Add newVelocity as data member if it makes more sense.
-  double newVelocity = 0;
+  double finalVelocity = 0;
 
   /* Implement loop to continuously calculate new velocity
    * until it converges to desiredVelocity (less than error threshold).
    * Use computeError to calculate error for PID equation.
-   *
+   * Calculate the controller output based on the PID equation.
+   * Add the controller output to the current velocity.
    * Use appropriately named data members to store other components
    * of the PID equation.
    *
    * Time increment and error threshold have been defined in the header.
+   * While testing, change PID constants in main() for convergence. 
    */
 
-  return newVelocity;
+  return finalVelocity;
 }
 
 /**
