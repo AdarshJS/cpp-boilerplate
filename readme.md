@@ -1,6 +1,6 @@
 # C++ Boilerplate
 [![Build Status](https://travis-ci.com/zzimits/cpp-boilerplate.svg?branch=master)](https://travis-ci.org/zzimits/cpp-boilerplate)
-[![Coverage Status](https://coveralls.io/repos/github/AdarshJS/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/AdarshJS/cpp-boilerplate?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/zzimits/cpp-boilerplate/badge.svg?branch=master)](https://coveralls.io/github/zzimits/cpp-boilerplate?branch=master)
 ---
 
 ## Authors
