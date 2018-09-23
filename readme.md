@@ -10,8 +10,8 @@ Driver: Adarsh Jagan Sathyamoorthy
 Navigator: Niket Shah
 
 For part 2:
-Driver Niket Shah
-Navigator: Adarsh Jagan Sathyamoorthy
+Navigator - zzimits
+Driver    - arunumd
 
 ## TODO and NOTES
 1. Implement the computeError and computeVelocity function.
