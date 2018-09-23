@@ -41,9 +41,10 @@ PIDcontroller::PIDcontroller(double gainP, double gainI, double gainD,
 
 double PIDcontroller::computeError() {
   // Calculate the difference between desired and current velocity.
+  double error = 0.0;
 
   // Return currentError
-  return currentError;
+  return error;
 }
 
 /**
