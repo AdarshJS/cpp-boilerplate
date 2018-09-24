@@ -14,12 +14,18 @@ Navigator - zzimits
 Driver    - arunumd
 
 ## TODO and NOTES
-1. Implement the computeError and computeVelocity function.
+1. When implimenting computeVelocity there was no plant to calculate a new velocity so the controller output was added to the current velocity.
+2. The controller does not converge to zero when large controller gains are used.
+3. Consider adding an additional function that will calculate the controller output.
 
 Refer to the UML diagrams in the UML diagrams directory.
 Source files are inside ./app/
 Header files are inside ./include/
 Check test cases ./test/test.cpp
+
+## Future Work
+1. Model a plant to better understand how the controller output effects the velocity
+2. Develope more test cases to validate the new model.
 
 ## Overview
 
