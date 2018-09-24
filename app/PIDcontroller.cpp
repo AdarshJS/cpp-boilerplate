@@ -4,10 +4,11 @@
  * @copyright  2018 Adarsh Jagan S
  * @brief      Definitions for class PIDcontroller.
  */
-
+#include "PIDcontroller.hpp"
+#include <math.h>
 #include<iostream>
 // Add extra headers as needed.
-#include "PIDcontroller.hpp"
+
 
 /**
  * @brief               Constructor for PIDcontroller class
@@ -23,7 +24,7 @@
  */
 
 PIDcontroller::PIDcontroller(double gainP, double gainI, double gainD,
-                             double currVelocity, double desVelocity) {
+  double currVelocity, double desVelocity) {
   currentError = 0.0;
   kP = gainP;
   kI = gainI;
@@ -42,7 +43,7 @@ PIDcontroller::PIDcontroller(double gainP, double gainI, double gainD,
 double PIDcontroller::computeError() {
   // Calculate the difference between desired and current velocity.
   double error = 0.0;
-
+  error = desiredVelocity - currentVelocity;
   // Return currentError
   return error;
 }
@@ -58,17 +59,27 @@ double PIDcontroller::computeVelocity() {
   // Add newVelocity as data member if it makes more sense.
   double finalVelocity = 0;
 
-  /* Implement loop to continuously calculate new velocity
-   * until it converges to desiredVelocity (less than error threshold).
-   * Use computeError to calculate error for PID equation.
-   * Calculate the controller output based on the PID equation.
-   * Add the controller output to the current velocity.
-   * Use appropriately named data members to store other components
-   * of the PID equation.
-   *
-   * Time increment and error threshold have been defined in the header.
-   * While testing, change PID constants in main() for convergence. 
-   */
+  while (fabs(desiredVelocity - currentVelocity) > errorThreshold) {
+    double proportionalError = computeError();
+    double derivativeError = (proportionalError - previousError) / dTime;
+    previousErrorSum += (proportionalError*dTime);
+    double integralError = previousErrorSum;
+    double controllerOutput = kP * proportionalError + kD * derivativeError
+      + kI * integralError;
+    currentVelocity += controllerOutput;
+  }
+  finalVelocity = currentVelocity;
+	/* Implement loop to continuously calculate new velocity
+	 * until it converges to desiredVelocity (less than error threshold).
+	 * Use computeError to calculate error for PID equation.
+	 * Calculate the controller output based on the PID equation.
+	 * Add the controller output to the current velocity.
+	 * Use appropriately named data members to store other components
+	 * of the PID equation.
+	 *
+	 * Time increment and error threshold have been defined in the header.
+	 * While testing, change PID constants in main() for convergence.
+	 */
 
   return finalVelocity;
 }
