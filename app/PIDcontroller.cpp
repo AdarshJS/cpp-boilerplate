@@ -62,7 +62,7 @@ double PIDcontroller::computeVelocity() {
   while (fabs(desiredVelocity - currentVelocity) > errorThreshold) {
     double proportionalError = computeError();
     double derivativeError = (proportionalError - previousError) / dTime;
-    previousErrorSum = previous ErrorSum + proportionalError*dTime;
+    previousErrorSum += (proportionalError*dTime);
     double integralError = previousErrorSum;
     double controllerOutput = kP * proportionalError + kD * derivativeError
       + kI * integralError;
