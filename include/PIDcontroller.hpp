@@ -52,8 +52,7 @@ class PIDcontroller {
   double computeVelocity();
   // Class Destructor
   ~PIDcontroller();
-
 };
 
 
-#endif /* INCLUDE_PIDCONTROLLER_HPP_ */
+#endif  // INCLUDE_PIDCONTROLLER_HPP_
