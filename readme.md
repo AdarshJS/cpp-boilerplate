@@ -13,19 +13,27 @@ For part 2:
 Navigator - zzimits
 Driver    - arunumd
 
-## TODO and NOTES
+## Block Diagram 
+This is added after our team discussion. This block diagram aims to simplify the explanations needed to make the reader understand this PID implementation. 
+
+![alt text](https://github.com/AdarshJS/cpp-boilerplate/blob/master/PIDblockDiagram.png)
+
+source: Niket Shah
+
+## Notes after discussion
 1. When implimenting computeVelocity there was no plant to calculate a new velocity so the controller output was added to the current velocity.
-2. The controller does not converge to zero when large controller gains are used.
+2. The controller does not converge to zero when large controller gains (kP, kI, kD) are used.
 3. Consider adding an additional function that will calculate the controller output.
 
+## Future Work 
+1. Model a plant to better understand how the controller output effects the velocity.
+2. Develop more test cases to validate the new model. Test cases that look for convergence when the desired velocity keeps fluctuating (say sinusoidal or step input). 
+
+## Notes before discussion.
 Refer to the UML diagrams in the UML diagrams directory.
 Source files are inside ./app/
 Header files are inside ./include/
 Check test cases ./test/test.cpp
-
-## Future Work
-1. Model a plant to better understand how the controller output effects the velocity
-2. Develope more test cases to validate the new model.
 
 ## Overview
 
@@ -36,7 +44,7 @@ Simple starter C++ project with:
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/AdarshJS/cpp-boilerplate.git
 cd <path to repository>
 mkdir build
 cd build
@@ -63,7 +71,7 @@ In your Eclipse workspace directory (or create a new one), checkout the repo (an
 ```
 mkdir -p ~/workspace
 cd ~/workspace
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/AdarshJS/cpp-boilerplate.git
 ```
 
 In your work directory, use cmake to create an Eclipse project for an [out-of-source build] of cpp-boilerplate
