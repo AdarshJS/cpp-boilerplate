@@ -51,7 +51,7 @@ cd build
 cmake ..
 make
 Run tests: ./test/cpp-test
-Run program: ./app/shell-app
+Run program: ./app/pid-control
 ```
 
 ## Building for code coverage (for assignments beginning in Week 4)
@@ -103,7 +103,7 @@ unfold Build Targets, double click on "all" to build all projects.
 1. In Eclipse, right click on the boilerplate-eclipse in Project Explorer,
 select Run As -> Local C/C++ Application
 
-2. Choose the binaries to run (e.g. shell-app, cpp-test for unit testing)
+2. Choose the binaries to run (e.g. pid-control, cpp-test for unit testing)
 
 
 ## Debug
@@ -113,7 +113,7 @@ select Run As -> Local C/C++ Application
 the program to break).
 
 2. In Eclipse, right click on the boilerplate-eclipse in Project Explorer, select Debug As -> 
-Local C/C++ Application, choose the binaries to run (e.g. shell-app).
+Local C/C++ Application, choose the binaries to run (e.g. pid-control).
 
 3. If prompt to "Confirm Perspective Switch", select yes.
 
